@@ -1,5 +1,3 @@
-package src
-
 SEPARATOR = ", "
 QUOTE     = "\'"
 NEWLINE   = System.getProperty("line.separator")
