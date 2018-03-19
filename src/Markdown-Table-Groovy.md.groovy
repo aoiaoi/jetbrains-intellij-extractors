@@ -1,5 +1,3 @@
-package src
-
 NEWLINE   = System.getProperty("line.separator")
 
 begin = true
