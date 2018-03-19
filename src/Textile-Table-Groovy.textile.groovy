@@ -1,4 +1,6 @@
-NEWLINE   = System.getProperty("line.separator")
+package src
+
+NEWLINE = System.getProperty("line.separator")
 
 begin = true
 
@@ -10,24 +12,15 @@ def record(columns, dataRow) {
         }
         OUT.append(NEWLINE)
         
-        // header separator
-        columns.eachWithIndex { column, idx ->
-            def isNumber = dataRow.value(column).toString().isNumber()
-            
-            OUT.append("|")
-               .append(isNumber ? "---:" : ":---:")
-               .append(idx == columns.size() - 1 ? "|" : "")
-        }
-        OUT.append(NEWLINE)
-        
         begin = false
     }
     
     // values
     columns.eachWithIndex { column, idx ->
+        def isNumber = dataRow.value(column).toString().isNumber()
         def stringValue = FORMATTER.format(dataRow, column)
         
-        OUT.append("| ").append(stringValue).append(idx == columns.size() - 1 ? " |" : " ")
+        OUT.append("|").append(isNumber ? ">. " : "=. ").append(stringValue).append(idx == columns.size() - 1 ? " |" : " ")
     }
     OUT.append(NEWLINE)
 }
