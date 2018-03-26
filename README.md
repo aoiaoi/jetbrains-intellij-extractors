@@ -4,9 +4,16 @@
 
 Data extractor for IntelliJ-based IDEs.
 
-### Examples
+## Extractors
 
-```
+### ■ Markdown-Table.md.groovy
+
+extract query results to Table in Markdown.
+
+<details>
+  <summary>Example</summary>
+  
+```sql
 > select * from user;
 ```
 
@@ -16,9 +23,7 @@ Data extractor for IntelliJ-based IDEs.
 | 2 | fuga | 2018-02-01 12:00:00 |
 | 3 | piyo | 2018-03-01 23:59:59 |
 
-#### Markdown-Table-Groovy.md.groovy
-
-The extractor will output:
+This extractor extracts above result set as follows:
 
 ```Markdown
 | id | name | created_at |
@@ -27,10 +32,26 @@ The extractor will output:
 | 2 | fuga | 2018-02-01 12:00:00 |
 | 3 | piyo | 2018-03-01 23:59:59 |
 ```
+</details>
 
-#### PHP-Array-Groovy.php.groovy
+### ■ PHP-Array.php.groovy
 
-The extractor will output:
+extract query results to Array in PHP.
+
+<details>
+  <summary>Example</summary>
+  
+```sql
+> select * from user;
+```
+
+| id | name | created_at |
+|---:|:---:|:---:|
+| 1 | hoge | 2018-01-01 00:00:00 |
+| 2 | fuga | 2018-02-01 12:00:00 |
+| 3 | piyo | 2018-03-01 23:59:59 |
+
+This extractor extracts above result set as follows:
 
 ```php
 [
@@ -48,10 +69,27 @@ The extractor will output:
     ],
 ];
 ```
+</details>
 
-#### Python-Dictionaries-Groovy.py.groovy
 
-The extractor will output:
+### ■ Python-Dictionaries.py.groovy
+
+extract query results to Dictionaries in Python.
+
+<details>
+  <summary>Example</summary>
+  
+```sql
+> select * from user;
+```
+
+| id | name | created_at |
+|---:|:---:|:---:|
+| 1 | hoge | 2018-01-01 00:00:00 |
+| 2 | fuga | 2018-02-01 12:00:00 |
+| 3 | piyo | 2018-03-01 23:59:59 |
+
+This extractor extracts above result set as follows:
 
 ```python
 [
@@ -69,10 +107,26 @@ The extractor will output:
     },
 ]
 ```
+</details>
 
-#### Textile-Table-Groovy.textile.groovy
+### ■ Textile-Table.textile.groovy
 
-The extractor will output:
+extract query results to Table in Textile.
+
+<details>
+  <summary>Example</summary>
+  
+```sql
+> select * from user;
+```
+
+| id | name | created_at |
+|---:|:---:|:---:|
+| 1 | hoge | 2018-01-01 00:00:00 |
+| 2 | fuga | 2018-02-01 12:00:00 |
+| 3 | piyo | 2018-03-01 23:59:59 |
+
+This extractor extracts above result set as follows:
 
 ```
 | id | name | created_at |
@@ -80,5 +134,7 @@ The extractor will output:
 |>. 2 |=. fuga |=. 2018-02-01 12:00:00 |
 |>. 3 |=. piyo |=. 2018-03-01 23:59:59 |
 ```
+</details>
 
-## Getting started
+## Installation
+
